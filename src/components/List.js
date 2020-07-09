@@ -34,16 +34,21 @@ class List extends React.Component {
 
     // } 
 
-    onSubmitHandle(e){
-
-    }
-
+    
     onEditHandle(e){
-
+        
+    }
+    
+    onDeleteHandle(e){
+        
     }
 
-    onDeleteHandle(e){
-
+    onSubmitHandle(e){
+        e.preventDefault();
+        this.setState({
+            items: [...this.state.items, { id: Date.now(), title: e.target.item.value, done: false, date: new Date()}]
+        });
+        e.target.item.value = '';
     }
     render(){
         // const {inputVal} = this.state;
