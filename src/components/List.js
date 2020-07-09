@@ -39,8 +39,15 @@ class List extends React.Component {
         
     }
     
-    onDeleteHandle(e){
-        
+    onDeleteHandle(){
+        let id = arguments[0];
+        this.setState({
+            items: this.state.items.filter(item => {
+                if(item.id !== id){
+                    return item;
+                }
+            })
+        })
     }
 
     onSubmitHandle(e){
@@ -49,6 +56,7 @@ class List extends React.Component {
             items: [...this.state.items, { id: Date.now(), title: e.target.item.value, done: false, date: new Date()}]
         });
         e.target.item.value = '';
+        
     }
     render(){
         // const {inputVal} = this.state;
