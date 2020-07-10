@@ -70,7 +70,8 @@ class List extends React.Component {
         this.setState({
             items: this.state.items.map( item => {
                 if(item.id === id){
-                    item['done'] = true;
+                    const currentState = this.state.item['done']
+                    item['done'] = !currentState;
                     return item;
                 }
                 return item;
