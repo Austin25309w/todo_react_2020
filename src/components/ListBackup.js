@@ -91,20 +91,19 @@ class List extends React.Component {
 
     render(){
     return (
-        <div className='todoListMain'>
+        <div>
             {this.renderEditForm()}
             <form onSubmit={this.onSubmitHandle.bind(this)}>
-                <input placeholder= "Enter task" type="text" name="item" className="item"/>
+                <input type="text" name="item" className="item"/>
                 <button className="btn-add-item">Add Item</button>
             </form>
-            <ul style ={{ listStyleType: "none"}} className="theList">
+            <ul style ={{ listStyleType: "none"}}>
                 {this.state.items.map(item => (
-                    <li key={item.id} className={ item.done ? 'done': 'hidden'} onClick={this.onDeleteHandle.bind(this, item.id)}>
+                    <li key={item.id} className={ item.done ? 'done': 'hidden'}>
                         {item.title}
-                        <li>
-                            <button onClick={this.onEditHandle.bind(this, item.id, item.title)}>Edit</button>
-                            <button onClick={this.onCompleteHandle.bind(this, item.id )}>Complete</button>
-                        </li>
+                        <button onClick={this.onDeleteHandle.bind(this, item.id)}>Delete</button> 
+                        <button onClick={this.onEditHandle.bind(this, item.id, item.title)}>Edit</button>
+                        <button onClick={this.onCompleteHandle.bind(this, item.id )}>Complete</button>
                     </li>
                 ))}
             </ul>
