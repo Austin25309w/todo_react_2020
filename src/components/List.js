@@ -70,8 +70,8 @@ class List extends React.Component {
         this.setState({
             items: this.state.items.map( item => {
                 if(item.id === id){
-                    const currentState = this.state.item['done']
-                    item['done'] = !currentState;
+                    // const currentState = this.state.item['done']
+                    item['done'] = true;
                     return item;
                 }
                 return item;
@@ -92,6 +92,7 @@ class List extends React.Component {
     render(){
     return (
         <div className='todoListMain'>
+            <h1>Todos</h1>
             {this.renderEditForm()}
             <form onSubmit={this.onSubmitHandle.bind(this)}>
                 <input placeholder= "Enter task" type="text" name="item" className="item"/>
@@ -99,9 +100,10 @@ class List extends React.Component {
             </form>
             <ul style ={{ listStyleType: "none"}} className="theList">
                 {this.state.items.map(item => (
-                    <li key={item.id} className={ item.done ? 'done': 'hidden'} onClick={this.onDeleteHandle.bind(this, item.id)}>
+                    <li key={item.id} className={ item.done ? 'done': 'hidden'} >
                         {item.title}
-                        <li>
+                        <li className ="action_buttons">
+                            <button onClick={this.onDeleteHandle.bind(this, item.id)}>Delete</button>
                             <button onClick={this.onEditHandle.bind(this, item.id, item.title)}>Edit</button>
                             <button onClick={this.onCompleteHandle.bind(this, item.id )}>Complete</button>
                         </li>

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import List from './components/List'
+import EvMile from './components/EvMile/EvMile'
 import './App.css';
 
 class App extends Component {
@@ -15,8 +16,8 @@ render(){
   return (
     <div className="App">
       <header className="App-header">
-       <h1 className="todo_header">Todos</h1>
        <List name = "Austin" />
+       <EvMile />
       </header>
     </div>
   );

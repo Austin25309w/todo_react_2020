@@ -22,11 +22,9 @@
   justify-content: top;
   font-size: calc(10px + 2vmin);
   color: black;
+  
 }
 
-.todo_header {
-  padding-left: 7rem;
-}
 
 .App-link {
   color: #61dafb;
@@ -39,6 +37,23 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+
+.todoListMain {
+  border: 1px solid grey;
+  padding: 2rem;
+  border-radius: 5px;
+  flex: 1 ;
+ 
+}
+
+.action_buttons button {
+  display: inline-block;
+  border-radius: 5px;
+  width:80%;
+
 }
 .todoListMain input {
   padding: 10px;
@@ -83,4 +98,11 @@
 .todoListMain .theList li:hover {
   background-color: pink;
   cursor: pointer;
+}
+
+/* ev component */
+
+.ev_component {
+  width: 50%;
+  flex: 1 ;
 }
