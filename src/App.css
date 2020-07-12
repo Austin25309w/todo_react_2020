@@ -16,8 +16,8 @@
 .App-header {
   background-color: #66CCFF;
   min-height: 100vh;
-  /* display: flex; */
-  flex-direction: column;
+  display: flex;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: top;
   font-size: calc(10px + 2vmin);
@@ -42,8 +42,6 @@
 
 
 .todoListMain {
-  display: inline-block;
-  float: left;
   border: 1px solid grey;
   padding: 2rem;
   border-radius: 5px;
@@ -101,11 +99,23 @@
   cursor: pointer;
 }
 
+#update-add-item {
+  background-color: green;
+}
+
 /* ev component */
 
 .ev_component {
-  flex: 1 1 20rem;
+  margin: 2rem;
+  margin-top: 0;
   border: 1px solid grey;
   padding: 2rem;
   border-radius: 5px;
+}
+
+.ev_component input {
+  padding: 10px;
+  font-size: 16px;
+  border: 2px solid #FFF;
+  width: 165px;
 }

@@ -84,7 +84,7 @@ class List extends React.Component {
 
             return <form onSubmit={this.onUpdateHandle.bind(this)}>
                 <input type="text" name="updatedItem" className="item" defaultValue={this.state.title} />
-                <button className="update-add-item">Update</button>
+                <button id="update-add-item">Update</button>
             </form>
         }
     }
@@ -93,7 +93,11 @@ class List extends React.Component {
     return (
         <div className='todoListMain'>
             <h1>Todos</h1>
+            <div>
             {this.renderEditForm()}
+
+            </div>
+
             <form onSubmit={this.onSubmitHandle.bind(this)}>
                 <input placeholder= "Enter task" type="text" name="item" className="item"/>
                 <button className="btn-add-item">Add Item</button>
@@ -104,6 +108,7 @@ class List extends React.Component {
                         {item.title}
                         <li className ="action_buttons">
                             <button onClick={this.onDeleteHandle.bind(this, item.id)}>Delete</button>
+                            
                             <button onClick={this.onEditHandle.bind(this, item.id, item.title)}>Edit</button>
                             <button onClick={this.onCompleteHandle.bind(this, item.id )}>Complete</button>
                         </li>

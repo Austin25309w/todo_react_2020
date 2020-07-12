@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import List from './components/List'
+import List from './components/Todo/List'
 import EvMile from './components/EvMile/EvMile'
 import './App.css';
 
