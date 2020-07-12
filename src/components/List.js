@@ -71,7 +71,7 @@ class List extends React.Component {
             items: this.state.items.map( item => {
                 if(item.id === id){
                     // const currentState = this.state.item['done']
-                    item['done'] = true;
+                    item['done'] = !item['done'];
                     return item;
                 }
                 return item;
