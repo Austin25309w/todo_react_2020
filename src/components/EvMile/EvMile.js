@@ -11,42 +11,46 @@ class EvMile extends React.Component {
     constructor(props){
         super(props);
         this.state = {
-            input: 0
+            input: 0,
+            time: 0
         }
     }
 
-    componentWillUpdate
-
-
     handleChange = (e) => {
-        this.setState({ input: e.target.value });
-        
+        this.setState({ [e.target.name]: e.target.value});
     }
 
+
     milageCalculation = () => {
-        let milage = this.state.input * 3.3
+        console.log('input',this.state.input, 'time', this.state.time)
+        let milage = (this.state.input * (this.state.time /60)) * 3.3;
         return milage;
     }
 
-    // handleSubmit = (e) => {
-    //     e.preventDefault()
-
-    // }
-    
-
+    handleSubmit = (e) => {
+        e.preventDefault()
+    }
 
 render(){
     // const mile = this.state.input;
     return < div className="ev_component">
             <h1>Electric Vehicle Mile calculator</h1>
             <h3>Please enter charging speed in kW/h</h3>
-            <form onSubmit= {this.handleSubmit} >
+            <form >
                 <input placeholder="Enter charging speed" 
-                onChange={this.handleChange}
-                className= "item"/>
+                    name = "input"
+                    // type = "text"
+                    onChange={this.handleChange}
+                    className= "item"/><span>kw</span>
+                    <br/>
+                <input placeholder="Enter charging time" 
+                    // type = "text"
+                    name = "time"
+                    onChange={this.handleChange}
+                    className= "item"/><span>min</span>
                 {/* <input className ="btn-add-item" type="submit" value="Submit"/> */}
                 <div>
-                    <h3>Your EV will gain about {parseInt(this.milageCalculation(this.state.input))} miles after charging for 1 hour</h3>
+                    <h3>Your EV will gain about <span className="mile">{  parseInt(this.milageCalculation(this.state.input)) }</span> miles after charging for {this.state.time} minutes</h3>
                 </div>
             </form>
             

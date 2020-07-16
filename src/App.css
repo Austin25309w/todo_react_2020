@@ -114,8 +114,15 @@
 }
 
 .ev_component input {
+
+  margin: 1rem;
   padding: 10px;
   font-size: 16px;
   border: 2px solid #FFF;
+  border-radius: 5px;
   width: 165px;
+}
+
+.ev_component .mile {
+  color: red;
 }
