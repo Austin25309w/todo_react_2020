@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import List from './components/Todo/List'
 import EvMile from './components/EvMile/EvMile'
+import MiniTarget from './components/MiniTarget/MiniTarget'
 import './App.css';
 
 class App extends Component {
@@ -16,7 +17,8 @@ render(){
   return (
     <div className="App">
       <header className="App-header">
-       <List name = "Austin" />
+       <List />
+       <MiniTarget />
        <EvMile />
       </header>
     </div>

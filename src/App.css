@@ -126,3 +126,14 @@
 .ev_component .mile {
   color: red;
 }
+
+/* Mini Target */
+
+.miniTarget {
+  border: sloid;
+  width: 60%;
+  border-radius: 5px;
+  background-color: red;
+  margin: 1rem;
+  padding: 1rem;
+}
